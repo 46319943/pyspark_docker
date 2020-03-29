@@ -9,3 +9,7 @@ RUN cd ~ && \
 	wget https://jdbc.postgresql.org/download/postgresql-42.2.11.jar
 	
 ENTRYPOINT ["pyspark", "--driver-class-path", "/home/jovyan/postgresql-42.2.11.jar"]
+
+# 设置清华镜像、安装hanlp
+RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
+	pip install hanlp
